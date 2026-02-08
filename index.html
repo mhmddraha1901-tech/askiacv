@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Askia Zalfaunnisa</title>
+    <!-- Font Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #800000;
+            --dark-maroon: #4d0000;
+            --gold: #d4af37;
+            --soft-gold: #fcf4dd;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--maroon); /* Background Full Maroon */
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Latar Belakang Animasi Zig-Zag Mawar */
+        .rose-animation {
+            position: fixed;
+            top: -50px;
+            font-size: 30px;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            25% { transform: translateY(25vh) translateX(60px) rotate(90deg); }
+            50% { transform: translateY(50vh) translateX(-60px) rotate(180deg); }
+            75% { transform: translateY(75vh) translateX(60px) rotate(270deg); }
+            100% {
+                transform: translateY(110vh) translateX(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 60px auto;
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
+            border: 4px solid var(--gold);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Foto Profil */
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 5px solid var(--gold);
+            overflow: hidden;
+            background: var(--soft-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-text {
+            color: var(--maroon);
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--maroon);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--maroon);
+            border-bottom: 2px solid var(--gold);
+            display: block;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        h2::after {
+            content: " 🌹";
+            font-size: 1.2rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #fffafa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--soft-gold);
+        }
+
+        .info-item b {
+            color: var(--maroon);
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px 20px;
+            border-left: 6px solid var(--maroon);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateX(10px);
+            background: var(--soft-gold);
+        }
+
+        .year-tag {
+            display: inline-block;
+            background: var(--maroon);
+            color: var(--white);
+            padding: 3px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .skills-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: var(--maroon);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 2px solid var(--gold);
+        }
+
+        .social-link {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-maroon);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .social-link:hover {
+            background: var(--maroon);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--soft-gold);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .profile-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            .container { margin: 20px; padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="rose-garden"></div>
+
+    <div class="container">
+        <header>
+            <div class="profile-img-container">
+                <!-- Ganti 'src' dengan link foto asli Anda nanti -->
+                <img src="Gemini_Generated_Image_pgydmnpgydmnpgyd (1).png" alt="Foto Askia Zalfaunnisa" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder-text" style="display:none;">FOTO ASKIA</div>
+            </div>
+            <h1>Askia Zalfaunnisa</h1>
+            <p class="subtitle">Siswa SMA Karya Pembangunan Baleendah</p>
+        </header>
+
+        <section>
+            <h2>Tentang Saya</h2>
+            <p>Saya adalah seorang siswa di <b>SMA Karya Pembangunan Baleendah</b> yang memiliki semangat tinggi dalam bidang seni. Saya sangat menyukai kegiatan yang melibatkan kreativitas seperti memasak, menggambar, dan merias wajah (make up).</p>
+        </section>
+
+        <section>
+            <h2>Informasi Pribadi</h2>
+            <div class="profile-grid">
+                <div class="info-item">
+                    <b>Tanggal Lahir</b>
+                    06 Juni 2008
+                </div>
+                <div class="info-item">
+                    <b>Telepon</b>
+                    085759766804
+                </div>
+                <div class="info-item">
+                    <b>Bahasa</b>
+                    Indonesia, Inggris, Sunda
+                </div>
+                <div class="info-item">
+                    <b>Hobi</b>
+                    Memasak, Menggambar, Make Up
+                </div>
+                <div class="info-item" style="grid-column: span 2;">
+                    <b>Alamat</b>
+                    Kp. Cilebak Wetan, Desa Rancamanyar, Kec. Baleendah, Kab. Bandung, Prov. Jawa Barat
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pendidikan</h2>
+            <div class="card">
+                <span class="year-tag">Lulus 2026</span>
+                <p><strong>SMA Karya Pembangunan Baleendah</strong></p>
+            </div>
+            <div class="card">
+                <span class="year-tag">Lulus 2023</span>
+                <p><strong>SMP (Sekolah Menengah Pertama)</strong></p>
+            </div>
+            <div class="card">
+                <span class="year-tag">Lulus 2020</span>
+                <p><strong>SD (Sekolah Dasar)</strong></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Organisasi</h2>
+            <div class="card">
+                <strong>OSIS (SMA)</strong>
+                <p>Berperan aktif dalam organisasi kesiswaan di lingkungan SMA.</p>
+            </div>
+            <div class="card">
+                <strong>English Club / EC (SMA)</strong>
+                <p>Mengembangkan kemampuan bahasa Inggris dan komunikasi.</p>
+            </div>
+            <div class="card">
+                <strong>Pramuka (SD)</strong>
+                <p>Mengikuti kegiatan kepramukaan dasar saat sekolah dasar.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Keahlian</h2>
+            <div class="skills-flex">
+                <div class="skill-item">Memasak</div>
+                <div class="skill-item">Menggambar</div>
+                <div class="skill-item">Make Up</div>
+                <div class="skill-item">Public Speaking</div>
+            </div>
+            <p style="margin-top: 15px; font-style: italic; color: #666;">* Sertifikat: Belum ada</p>
+        </section>
+
+        <section style="text-align: center;">
+            <h2>Sosial Media</h2>
+            <a href="https://instagram.com/sskiiaayrl" class="social-link" target="_blank">
+                Instagram: @sskiiaayrl
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        <p>Dibuat dengan ❤️ untuk Askia Zalfaunnisa &copy; 2024</p>
+    </footer>
+
+    <script>
+        function rainRoses() {
+            const garden = document.getElementById('rose-garden');
+            const rose = document.createElement('div');
+            rose.className = 'rose-animation';
+            rose.innerText = '🌹';
+            
+            // Variasi posisi dan waktu
+            rose.style.left = Math.random() * 100 + 'vw';
+            const duration = (Math.random() * 4 + 4); 
+            rose.style.animationDuration = duration + 's';
+            rose.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            
+            garden.appendChild(rose);
+
+            setTimeout(() => {
+                rose.remove();
+            }, duration * 1000);
+        }
+
+        // Munculkan mawar setiap 500ms
+        setInterval(rainRoses, 500);
+    </script>
+</body>
+</html>
